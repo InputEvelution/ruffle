@@ -157,6 +157,7 @@ pub fn random<'gc>(
     // This generated a restricted set of 'f64' values, which some SWFs implicitly rely on.
     const MAX_VAL: u32 = 0x7FFFFFFF;
     let rand = activation.context.rng.random_range(0..MAX_VAL);
+    println!("Random Value: {}", ((rand as f64) / (MAX_VAL as f64 + 1f64)));
     Ok(((rand as f64) / (MAX_VAL as f64 + 1f64)).into())
 }
 
